@@ -132,3 +132,8 @@ The project includes:
 
 Jahnavi
 Aspiring Generative AI Engineer
+<img width="1920" height="1080" alt="Screenshot (203)" src="https://github.com/user-attachments/assets/ee42b343-9192-4787-baa6-6c62df26d8b4" />
+<img width="1920" height="1080" alt="Screenshot (202)" src="https://github.com/user-attachments/assets/77a7623c-dbb4-4ae9-9777-8f9b5349e6c4" />
+<img width="1920" height="1080" alt="Screenshot (201)" src="https://github.com/user-attachments/assets/0fcdbe6c-9ae9-4494-a69f-a0add1a51809" />
+
+
