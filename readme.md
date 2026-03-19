@@ -1,142 +1,174 @@
-#  AI Resume–Job Fit Evaluator (LLM-Based)
+ 
+---
 
-An end-to-end Generative AI system that evaluates the compatibility between a resume and a job description using a Large Language Model (LLM).
+ LLM-Powered Resume–Job Fit Evaluator
 
-This project extends a traditional ML baseline model (implemented separately) and demonstrates how LLMs can be used for intelligent resume screening.
 
 ---
 
-##  Project Overview
+Project Description
 
-This system:
+An end-to-end Generative AI system that evaluates how well a candidate’s resume matches a given job description using a Large Language Model (LLM). The system generates a match score, identifies missing skills, and provides a concise explanation to assist in automated resume screening.
 
-* Uses a local LLM (**Mistral via Ollama**) for resume-job evaluation
-* Generates a **match score (0–100)**
-* Identifies **missing skills**
-* Provides a short **AI-generated explanation**
-* Includes a **Streamlit web application** for interactive use
 
 ---
 
-##  Problem Statement
+Project Statement
 
-Automated resume screening is often rule-based or keyword-based.
+Traditional resume screening methods rely on keyword matching, which fails to capture the semantic meaning of skills and experience. This project solves the problem by leveraging a Large Language Model to perform intelligent, context-aware evaluation of resume-job compatibility, improving accuracy and efficiency in candidate selection.
 
-This project explores:
-
-> Can a Large Language Model reason about resume-job fit better than traditional ML models?
 
 ---
 
-##  Project Architecture
+Features
 
-Resume + Job Description
-→ Prompt Engineering
-→ Local LLM (Mistral via Ollama)
-→ Structured JSON Output
-→ Score + Missing Skills + Explanation
-→ Streamlit UI
+Resume and job description compatibility evaluation
+
+Match score generation (0–100)
+
+Identification of missing skills
+
+AI-generated explanation of results
+
+Local LLM inference using Mistral (via Ollama)
+
+Streamlit-based interactive web application
+
+Prediction on unseen resumes
+
+Evaluation using labeled dataset
+
+
 
 ---
 
-## 📂 Folder Structure
+Technologies Used
 
+Python
+
+Pandas
+
+Streamlit
+
+Ollama
+
+Mistral LLM
+
+Scikit-learn
+
+TQDM
+
+HuggingFace Datasets
+
+
+
+---
+
+### Project Architecture
+```
+[Resume + Job Description]
+        ↓
+[Prompt Engineering]
+        ↓
+[Mistral LLM (Ollama)]
+        ↓
+[Structured Output (JSON)]
+        ↓
+[Match Score + Missing Skills + Explanation]
+        ↓
+[Streamlit UI]
+
+---
+```
+### Folder Structure
+---
 ```
 project-root/
 │
 ├── app.py
-│
-|
-|── train.py
-|── predict.py
-│── evaluate.py
-│── llm_utils.py
+├── train.py
+├── predict.py
+├── evaluate.py
+├── llm_utils.py
+├── requirements.txt
+├── README.md
 │
 ├── data/
 │   ├── raw/
 │   │   └── resume_data.csv
 │   └── processed/
 │       ├── resume_data_processed.csv
-│       ├── new_resumes.csv
-│       └── unseen_prediction.csv
+│       ├── new_resume.csv
+│       └── unseen_predictions.csv
 │
 ├── prompts/
-│   └── resume_result.csv
+│   └── resume_results.csv
 │
-├── notebooks/
-│
-├── requirements.txt
-└── README.md
+└── notebooks/
+├── load_data.ipynb
+└── prompts/
 ```
 
 ---
 
-##  Dataset
+Installation
 
-Dataset used:
+1. Clone the repository
 
-* Resume–Job Description Fit dataset from HuggingFace
-* Contains resume text, job descriptions, and labels (Fit / No Fit)
 
----
+2. Navigate to the project folder
 
- 
 
-##  Model Output Format
+3. Install dependencies using requirements.txt
 
-The LLM returns structured JSON:
 
-```
-{
-  "match_score": 85,
-  "missing_skills": ["SQL", "Docker"],
-  "explanation": "The candidate has strong ML and Python skills but lacks backend deployment experience."
-}
-```
+4. Install Ollama and download the Mistral model
 
----
 
-##  Evaluation
-
-The project includes:
-
-* Training pipeline
-* Prediction on unseen resumes
-* Accuracy-based evaluation
-
----
-
-## Technologies Used
-
-* Python
-* Streamlit
-* Pandas
-* Ollama
-* Mistral (LLM)
-* Scikit-learn
-
----
 
 
 ---
 
-##  Future Improvements
+Run Application
 
-* Add RAG-based skill retrieval
-* Add ML vs LLM performance comparison
-* Add deployment (Render / AWS / HuggingFace Spaces)
+Run the Streamlit app using: streamlit run app.py
+
 
 ---
 
-##  Author
+Example Output
 
-Jahnavi besabathini
+match_score: 82
+
+missing_skills: Docker, Kubernetes
+
+explanation: Candidate has strong programming and ML skills but lacks deployment and 
+
+containerization experience.
+
+
+---
+
+Future Improvements
+
+Add Retrieval-Augmented Generation (RAG) for better skill matching
+
+Compare LLM performance with traditional ML models
+
+Deploy using cloud-based LLM APIs
+
+Improve evaluation metrics (precision, recall, F1-score)
+
+Optimize prompts to reduce hallucinations
+
+
+
+---
+
+Author
+
+Jahnavi
 Aspiring Generative AI Engineer
 
 
-<img width="1920" height="1080" alt="Screenshot (203)" src="https://github.com/user-attachments/assets/ee42b343-9192-4787-baa6-6c62df26d8b4" />
-<img width="1920" height="1080" alt="Screenshot (202)" src="https://github.com/user-attachments/assets/77a7623c-dbb4-4ae9-9777-8f9b5349e6c4" />
-<img width="1920" height="1080" alt="Screenshot (201)" src="https://github.com/user-attachments/assets/0fcdbe6c-9ae9-4494-a69f-a0add1a51809" />
-
-
-
+ 
